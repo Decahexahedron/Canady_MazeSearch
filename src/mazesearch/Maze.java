@@ -14,7 +14,7 @@ public class Maze {
             {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
             {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}};
 
-    public boolean traverse(int row, int column) {
+    public boolean traverse(int row, int column) throws InterruptedException {
 
         if (valid(row, column)) {
             grid[row][column] = tried;
@@ -22,18 +22,19 @@ public class Maze {
             return false;
         }
 
-        if (traverse(row - 1, column) || traverse(row + 1, column) || traverse(row, column + 1) || traverse(row, column - 1)) {
+        if (true) {
             grid[row][column] = path;
-//            break;
         }
+        
         for (int i = 0; i < 100; i++) {
             System.out.println("");
         }
         print(grid);
+        Thread.sleep(500);
         return true;
     }
 
-    private boolean valid(int row, int column) {
+    private boolean valid(int row, int column) throws InterruptedException {
         return row < grid.length && row >= 0 && column < grid[0].length && column >= 0;
     }
 
