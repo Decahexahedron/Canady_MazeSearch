@@ -19,22 +19,7 @@ public class Maze {
 
     void generate() throws InterruptedException {
         while (!traverse(0, 0)) {
-            print();            
-            System.out.print("\n");
-            System.out.print("\n");
-            System.out.print("\n");
-            System.out.print("\n");
-            System.out.print("\n");
-            System.out.print("\n");
-            System.out.print("\n");
-            System.out.print("\n");
-            System.out.print("\n");
-            System.out.print("\n");
-            System.out.print("\n");
-            System.out.print("\n");
-            System.out.print("\n");
-            System.out.print("\n");
-            System.out.print("\n");
+            System.out.println("failed maze check");
             random();
         }
     }
@@ -78,7 +63,7 @@ public class Maze {
 
     void print() {
         for (int i = 0; i < grid[0].length - 5; i++) {
-            for (int j = 0; j < grid[1].length; j++) {
+            for (int j = 0; j < grid[1].length; j++) { 
                 if (grid[i][j] == 0) {
                     System.out.print("██");
                 } else if (grid[i][j] == 1) {
